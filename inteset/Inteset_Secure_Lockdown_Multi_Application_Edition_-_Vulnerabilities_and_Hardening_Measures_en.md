@@ -12,24 +12,33 @@ So let's take a look at the findings.
 # Affected Product
 In its "About"-Tab Secure Lockdown only states "Version 2.0". However, there is a registry key ` HKCU:\SOFTWARE\Inteset\` that indicates the version is 2.00.219.
 During the original assessment, "Secure Lockdown - Multi Application Edition 2.00.219" was the most recent and assessed version as well. By the time of writing of this blogpost, the version had not changed.
-![SLBuild_psh.png](.attachments/SL_Build_psh.png)
+
+![SLBuild_psh.png](.attachments/SLBuild_psh.png)
+
 # The Setup
 Let's start with the setup. For our assessment we started with the following options, that are almost similar to what our customer had set, with the difference, that we enabled the Microsoft Edge options here.
 Inteset offers some categories for their settings. Let's start with the `System Lockdown - Local Level`.
-![LocalLevelLockdown.png](.attachments/Local_Level_Lockdown.png)
+
+![LocalLevelLockdown.png](.attachments/LocalLevelLockdown.png)
+
 Oh, and if you think that Edge is blocked in general, if it's box is unchecked - it isn't. Unchecked means, that there is no protection for Edge at all. 
 This would mean instant Game-Over, as we'd have a lots of options like just opening PowerShell, enabling legacy mode and ActiveX for code execution, browsing files, downloading and executing malicious files etc.
 That's why we chose to "Lockdown" Edge as well.
 However, as you will see later, there are still some attack vectors, even with the full Edge lockdown mode as shown 
-![EdgeLockDown1.png](.attachments/Edge_Lock_Down1.png)
-![EdgeLockDown2.png](.attachments/Edge_Lock_Down2.png)
+
+![EdgeLockDown1.png](.attachments/EdgeLockDown1.png)
+
+![EdgeLockDown2.png](.attachments/EdgeLockDown2.png)
 
 As we can see: downloads, extensions, settings etc. are all blocked now. It wouldn't have been necessary to prevent fullscreen. But that's not the point here.
 
 Next we can take a look at the `System Lockdown - Machine Level` options. As you can see we are also denying as much as possible. 
 Further we activate the `Circle Dock` option. This allows us to have just the Circle Dock on screen and no other options (no Windows Taskbar) besides the ones we want to give to the user.
-![MachineLevelLockdown.png](.attachments/Machine_Level_Lockdown.png)
-![csm_CircleDock.png](.attachments/csm_Circle_Dock.png)
+
+![MachineLevelLockdown.png](.attachments/MachineLevelLockdown.png)
+
+![CircleDock.png](.attachments/CircleDock.png)
+
 There are also other options, like `Log off / Restart`, but this is just if the system should restart and the time after which a user will get logged off (yes, as the name says... I know).
 Further we could define background apps, that are allowed to run. In our case we did not test anything of this, as it was not configured by the customer. What is to be stated here is, that in that mode **EVERYTHING** can run in the background.
 
@@ -53,8 +62,8 @@ The first two opportunities are in the `Options`-tab. By clicking the links in "
 ![bat_options.png](.attachments/bat_options.png)
 
 The same goes for the "Terminal"-tab. Here we can "Find out more about experimental terminal settings". And we can do this with the default browser of course.
-![csm_bat_terminal.png](.attachments/csm_bat_terminal.png)
-![csm_Escape3.png](.attachments/csm_Escape3.png)
+![bat_terminal.png](.attachments/bat_terminal.png)
+![Escape3.png](.attachments/Escape3.png)
 And now we have access to the Browser. 
 
 ## Solution
@@ -68,8 +77,8 @@ So now we have access to Edge. But what now? What to do with that? Can we downlo
 
 The second issue we have with "Inteset Secure Lockdown Multi Application Edition", is that once we got access to Edge, we get code execution.
 Even though the software is blocking a lot of things, like browser settings, downloads etc. 
-![csm_blocked_downloads.png](.attachments/csm_blocked_downloads.png)
-![csm_blocked_settigns.png](.attachments/csm_blocked_settigns.png)
+![blocked_downloads.png](.attachments/blocked_downloads.png)
+![blocked_settigns.png](.attachments/blocked_settigns.png)
 ![blocked_file.png](.attachments/blocked_file.png)
 It does not block the download and execution of so called "ClickOnce" applications. 
 
@@ -108,8 +117,8 @@ Afterwards we can just host the ClickOnce on our server and download/execute it 
 ![ClickOnce1.png](.attachments/Click_Once1.png)
 We have to click a few times during this overall process. So for a phishing campaing this would be bit of a hassle (as long as we cannot cert it or do bit more sophisticated stuff like the awesome team from SpecterOps. Seriously, check out the mentioned blogpost). But for our scenario, in which we are the clicking user on a locked down system ourselves, this is no hassle.
 ![ClickOnce2.5.png](.attachments/Click_Once2_5.png)
-![csm_ClickOnce4.png](.attachments/csm_Click_Once4.png)
-![csm_ClickOnce3.png](.attachments/csm_Click_Once3.png)
+![ClickOnce4.png](.attachments/Click_Once4.png)
+![ClickOnce3.png](.attachments/Click_Once3.png)
 Aaaaand after clicking "Install" we get our code executed and launch (in our case) our powershell.
 ![ClickOnceExec1_redacted.png](.attachments/Click_Once_Exec1_redacted.png)
 Congratulations, we can now execute arbitrary code.
@@ -154,7 +163,7 @@ Besides hoping for Inteset fixing those issues, if it is possible for you, we su
 In our test, this proved effective against this attack.
 
 ![EdgeLockDown_whitelist.png](.attachments/Edge_Lock_Down_whitelist.png)
-![csm_WhiteList_FileRead.png](.attachments/csm_White_List_File_Read.png)
+![WhiteList_FileRead.png](.attachments/White_List_File_Read.png)
 Using an allowlist will also (if kept clean and minimalistic) reduce your attack surface for the ClickOnce attack vector.
 # Closing Statement
 
