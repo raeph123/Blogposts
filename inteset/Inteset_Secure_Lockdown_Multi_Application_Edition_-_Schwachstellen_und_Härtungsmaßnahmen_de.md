@@ -21,19 +21,21 @@ Im "About"-Tab von Secure Lockdown wird lediglich "Version 2.0" ausgegeben. Es g
 
 Fangen wir mit den Einstellungen an. Für unsere Analyse starten wir mit den folgenden Einstellungen. Diese sind nahezu identisch mit denen, die unser Kunde gesetzt hatte. Allerdings haben wir hier noch die "Edge Lockdown" Option aktiviert.
 Inteset kategorisiert die Einstellungen in verschiedene Tabs. Starten wir mit `System Lockdown - Local Level`.
-![LocalLevelLockdown.png](.attachments/Local_Level_Lockdown.png)
+![LocalLevelLockdown.png](.attachments/LocalLevelLockdown.png)
 Oh, und falls ihr dachtet, das Microsoft Edge geblockt wird, weil der Haken bei Edge nicht gesetzt ist - Das ist nicht der Fall. Kein Häkchen heißt für "Secure Lockdown", dass gar keine Sicherheitsmaßnahmen für Edge gesetzt sind.
 Das wäre ein direktes Game-Over. Wir hätten dann einfach die Möglichkeit eine PowerShell zu öffnen, den "legacy mode" zu aktivieren und damit Code Execution zu erlangen, Files zu durchsuchen, schädliche Dateien herunterzuladen und auszuführen usw. 
 Aus diesem Grund hielten wir es für angebracht, den "Lockdown" für Edge auch zu aktivieren.
 Wie ihr allerdings später sehen werdet, haben wir Wege gefunden schädliche Aktionen auszuführen. Trotz vollem Edge "Lockdown", wie er unten dargestellt ist.
-![EdgeLockDown1.png](.attachments/Edge_Lock_Down1.png)
-![EdgeLockDown2.png](.attachments/Edge_Lock_Down2.png)
+![EdgeLockDown1.png](.attachments/EdgeLockDown1.png)
+
+![EdgeLockDown2.png](.attachments/EdgeLockDown2.png)
 Wie wir sehen, Downloads, Erweiterungen, Einstellungen etc. sind nun alle geblockt. Fullscreen nicht zu erlauben wäre zwingend notwendig gewesen. Aber was solls ;-)
 
 Als nächstes, schauen wir uns die `System Lockdown - Machine Level` Einstellungen an. Wie ihr seht, sind wir auch hier so restriktiv wie möglich.
 Außerdem aktivieren wir die `Circle Dock` Option. Diese erlaubt uns, nur den Circle Dock auf dem abgesicherten Bildschirm anzuzeigen (keine Windows Task-Leiste), mit nur den Programmen, die wir erlauben möchten.
-![MachineLevelLockdown.png](.attachments/Machine_Level_Lockdown.png)
-![CircleDock.png](.attachments/Circle_Dock.png)
+![MachineLevelLockdown.png](.attachments/MachineLevelLockdown.png)
+
+![CircleDock.png](.attachments/CircleDock.png)
 Es gibt auch noch weitere Optionen wie `Log off / Restart`, diese dienen aber nur dazu das System neu zu starten und zu definieren nach welchem Zeitraum ein User ausgeloggt wird (ja, genau wie der Name es sagt...).
 Wir könnten zusätzlich noch Hintergrundapplikationen konfigurieren. Dies würde dann definieren, welche Prozesse laufen dürfen. Da diese Einstellung von unserem Kunden nicht gesetzt war, haben wir sie auch weder gesetzt noch ausführlich getestet. Was man allerdings wissen sollte, ist das mit diesen Einstellungen einfach **alles** laufen darf.
 
