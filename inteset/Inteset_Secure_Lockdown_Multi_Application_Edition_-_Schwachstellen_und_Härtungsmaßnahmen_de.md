@@ -14,7 +14,7 @@ Inteset selbst, beschreibt ihre Software "Secure Lockdown - Multi Application Ed
 # Betroffenes Produkt
 
 Im "About"-Tab von Secure Lockdown wird lediglich "Version 2.0" ausgegeben. Es gibt allerdings einen Registry Key `HKCU:\SOFTWARE\Inteset\` der build 2.00.219 angibt. Während unserem initialen Assessment war "Secure Lockdown - Multi Application Edition 2.00.219" ebenfalls die aktuellste Version.
-![SLBuild\_psh.png](.attachments/SL_Build_psh.png)
+![SLBuild\_psh.png](.attachments/SLBuild_psh.png)
 
 # Das Setup
 
@@ -60,8 +60,8 @@ Die ersten zwei Möglichkeiten sind im Tab `Options` zu finden. Wenn man die Lin
 
 Das gleiche gilt für den `Terminal` Tab. Wir können mit dem Link in "Find out more about experimental terminal settings" den Edge Browser starten.
 
-![csm_bat_terminal.png](.attachments/csm_bat_terminal.png)
-![csm_Escape3.png](.attachments/csm_Escape3.png)
+![bat_terminal.png](.attachments/bat_terminal.png)
+![Escape3.png](.attachments/Escape3.png)
 
 Und schon haben wir Zugriff auf den Browser.
 
@@ -170,8 +170,8 @@ Wir hoffen natürlich, dass Inteset diese Schwachstellen behebt. Trotzdem empfeh
 In unserem Test erwies sich das als effektiv.
 
 
-![EdgeLockDown_whitelist.png](.attachments/Edge_Lock_Down_whitelist.png)
-![csm_WhiteList_FileRead.png](.attachments/csm_White_List_File_Read.png)
+![EdgeLockDown_whitelist.png](.attachments/EdgeLockDown_whitelist.png)
+![WhiteList_FileRead.png](.attachments/WhiteList_FileRead.png)
 
 Das konfigurieren einer Allowlist kann (wenn sie minimalistisch gehalten und gepflegt wird) zudem die Angriffsoberfläche für den ClickOnce Vektor verringern.
 
