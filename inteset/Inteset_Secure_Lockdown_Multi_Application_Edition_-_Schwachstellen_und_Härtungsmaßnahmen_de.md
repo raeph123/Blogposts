@@ -120,7 +120,9 @@ Jetzt können einfach die Anwendung hochladen, und sie auf unserem Zielsystem au
 Bis die Datei tatsächlich ausführt wird, müssen wir uns durch ein paar Dialoge klicken. Für eine Phishingkampagne wäre das also etwas aufwändig (zumindest, solange wir kein Zertifikat haben, mit dem wir unsere Anwendung signieren können. Oder solange wir nicht anderweitig etwas mehr Aufwand betreiben. Mehr dazu im obigen Blogpost von SpecterOps. Ernsthaft, wir empfehlen wirklich ihn durchzulesen). Für unser Szenario ist das allerdings absolut kein Problem. Da wir physisch am System sind (deswegen ja der Kiosk Modus) und uns einfach selbst durch die Dialoge klicken können.
 
 ![ClickOnce2.5.png](.attachments/Click_Once2_5.png)
+
 ![ClickOnce4.png](.attachments/Click_Once4.png)
+
 ![ClickOnce3.png](.attachments/Click_Once3.png)
 
 Uuuuund nachdem wir "Install" klicken, wird unser Code auf dem System ausgeführt und unsere PowerShell gestartet.
