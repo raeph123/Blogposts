@@ -49,13 +49,17 @@ Alright, now that we know how the setup looks like, let's see how we can get acc
 So this one has a catch. Most lockdowns or kiosk modes we've seen so far have been quite easy to bypass. In this case however, our escape has a precondition. The application started from the `Circle Dock` has to call `cmd.exe`. In the case of our customer, they started their program as a `.bat` file.
 
 I know what you're thinking right now. Aaaah ok, just cancel the task in the CMD and you can access it. Easy as cake.
+
 ![no.png](.attachments/no.png)
+
 But no. It was not as easy as that. Cancelling the running task did lead to an "Access Denied" error. However, there are other methods. When bypassing lockdowns, it is always important to check for all kinds of menus and stuff to see if we can escape into an explorer etc. 
 In our case, with the help of CMD. We found a way to get access to Edge (yes, exactly as the heading states it. Surprise surprise).
 
 So as mentioned already, a lot of things have been locked down quite well. Help menus and other standard ways that every security person checks first. However, the context menu of CMD was not. 
 Therefore we could just right click the menu bar of CMD and then access the properties.
+
 ![bat_properties.png](.attachments/bat_properties.png)
+
 Afterwards, the properties offer some possibilities to start the default web browser, which was MS Edge in our case. 
 
 The first two opportunities are in the `Options`-tab. By clicking the links in "Learn more about legacy console mode" or "Find out more about new console features", MS Edge opens with the help/info pages about those topics.
@@ -76,10 +80,12 @@ So now we have access to Edge. But what now? What to do with that? Can we downlo
 # Execution of ClickOnce Applications
 
 The second issue we have with "Inteset Secure Lockdown Multi Application Edition", is that once we got access to Edge, we get code execution.
-Even though the software is blocking a lot of things, like browser settings, downloads etc. 
+Even though the software is blocking a lot of things, like browser settings, downloads etc.
+
 ![blocked_downloads.png](.attachments/blocked_downloads.png)
 ![blocked_settigns.png](.attachments/blocked_settigns.png)
 ![blocked_file.png](.attachments/blocked_file.png)
+
 It does not block the download and execution of so called "ClickOnce" applications. 
 
 What is ClickOnce? Well, here's a description from Microsoft.
@@ -148,8 +154,10 @@ Besides that, there is plenty information out there regarding group policies to 
 
 There's also another vulnerability that we can abuse as soon as we have access to a browser. While one can argue about if other topics are software or user configuration issues, this one is a bug for sure.
 
-We could see on screenshots in the ClickOnce chapter, that `file` links are not allowed in "inteset Secure Lockdown Multi Application Edition". 
+We could see on screenshots in the ClickOnce chapter, that `file` links are not allowed in "inteset Secure Lockdown Multi Application Edition".
+
 ![FileRead.png](.attachments/File_Read.png)
+
 However, this can be bypassed by using `UNCPaths` like `\\127.0.0.1\C$`. This way we can access the filesystem and read any file, the useraccount which runs Inteset has access to.
 
 ## CVE Information
@@ -163,7 +171,9 @@ Besides hoping for Inteset fixing those issues, if it is possible for you, we su
 In our test, this proved effective against this attack.
 
 ![EdgeLockDown_whitelist.png](.attachments/Edge_Lock_Down_whitelist.png)
+
 ![WhiteList_FileRead.png](.attachments/White_List_File_Read.png)
+
 Using an allowlist will also (if kept clean and minimalistic) reduce your attack surface for the ClickOnce attack vector.
 # Closing Statement
 
