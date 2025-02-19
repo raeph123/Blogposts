@@ -66,8 +66,11 @@ The first two opportunities are in the `Options`-tab. By clicking the links in "
 ![bat_options.png](.attachments/bat_options.png)
 
 The same goes for the "Terminal"-tab. Here we can "Find out more about experimental terminal settings". And we can do this with the default browser of course.
+
 ![bat_terminal.png](.attachments/bat_terminal.png)
+
 ![Escape3.png](.attachments/Escape3.png)
+
 And now we have access to the Browser. 
 
 ## Solution
@@ -120,13 +123,21 @@ namespace ClickOnceTest
 Sure, we could write much more sophisticated stuff here. But I'm lazy ¯\\_(ツ)_/¯.
 
 Afterwards we can just host the ClickOnce on our server and download/execute it on the target machine for code execution.
+
 ![ClickOnce1.png](.attachments/Click_Once1.png)
+
 We have to click a few times during this overall process. So for a phishing campaing this would be bit of a hassle (as long as we cannot cert it or do bit more sophisticated stuff like the awesome team from SpecterOps. Seriously, check out the mentioned blogpost). But for our scenario, in which we are the clicking user on a locked down system ourselves, this is no hassle.
+
 ![ClickOnce2.5.png](.attachments/Click_Once2_5.png)
+
 ![ClickOnce4.png](.attachments/Click_Once4.png)
+
 ![ClickOnce3.png](.attachments/Click_Once3.png)
+
 Aaaaand after clicking "Install" we get our code executed and launch (in our case) our powershell.
+
 ![ClickOnceExec1_redacted.png](.attachments/Click_Once_Exec1_redacted.png)
+
 Congratulations, we can now execute arbitrary code.
 
 ## CVE Information
