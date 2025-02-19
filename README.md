@@ -1,2 +1,3 @@
 # Blogposts
-My Blogposts saved here to maybe copy them to medium or sth.
+
+Backup of my blogposts for a possible rehost at medium.
