@@ -181,9 +181,9 @@ Besides hoping for Inteset fixing those issues, if it is possible for you, we su
 
 In our test, this proved effective against this attack.
 
-![EdgeLockDown_whitelist.png](.attachments/Edge_Lock_Down_whitelist.png)
+![EdgeLockDown_whitelist.png](.attachments/EdgeLockDown_whitelist.png)
 
-![WhiteList_FileRead.png](.attachments/White_List_File_Read.png)
+![WhiteList_FileRead.png](.attachments/WhiteList_FileRead.png)
 
 Using an allowlist will also (if kept clean and minimalistic) reduce your attack surface for the ClickOnce attack vector.
 # Closing Statement
