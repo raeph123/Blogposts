@@ -14,6 +14,7 @@ Inteset selbst, beschreibt ihre Software "Secure Lockdown - Multi Application Ed
 # Betroffenes Produkt
 
 Im "About"-Tab von Secure Lockdown wird lediglich "Version 2.0" ausgegeben. Es gibt allerdings einen Registry Key `HKCU:\SOFTWARE\Inteset\` der build 2.00.219 angibt. Während unserem initialen Assessment war "Secure Lockdown - Multi Application Edition 2.00.219" ebenfalls die aktuellste Version.
+
 ![SLBuild\_psh.png](.attachments/SLBuild_psh.png)
 
 # Das Setup
