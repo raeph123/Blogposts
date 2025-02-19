@@ -33,7 +33,7 @@ Wie wir sehen, Downloads, Erweiterungen, Einstellungen etc. sind nun alle gebloc
 Als nächstes, schauen wir uns die `System Lockdown - Machine Level` Einstellungen an. Wie ihr seht, sind wir auch hier so restriktiv wie möglich.
 Außerdem aktivieren wir die `Circle Dock` Option. Diese erlaubt uns, nur den Circle Dock auf dem abgesicherten Bildschirm anzuzeigen (keine Windows Task-Leiste), mit nur den Programmen, die wir erlauben möchten.
 ![MachineLevelLockdown.png](.attachments/Machine_Level_Lockdown.png)
-![csm_CircleDock.png](.attachments/csm_Circle_Dock.png)
+![CircleDock.png](.attachments/Circle_Dock.png)
 Es gibt auch noch weitere Optionen wie `Log off / Restart`, diese dienen aber nur dazu das System neu zu starten und zu definieren nach welchem Zeitraum ein User ausgeloggt wird (ja, genau wie der Name es sagt...).
 Wir könnten zusätzlich noch Hintergrundapplikationen konfigurieren. Dies würde dann definieren, welche Prozesse laufen dürfen. Da diese Einstellung von unserem Kunden nicht gesetzt war, haben wir sie auch weder gesetzt noch ausführlich getestet. Was man allerdings wissen sollte, ist das mit diesen Einstellungen einfach **alles** laufen darf.
 
@@ -78,8 +78,8 @@ Jetzt haben wir also Zugriff auf MS Edge. Und was jetzt? Was können wir damit e
 Die zweite Schwachstelle in "Inteset Secure Lockdown Multi Application Edition" ist, dass sobald wir Zugriff auf Edge haben, beliebigen Code ausführen können.
 Die Software blockiert einige Dinge, wie beispielsweise den Zugriff auf die Browsereinstellungen, Downloads etc.
 
-![csm_blocked_downloads.png](.attachments/csm_blocked_downloads.png)
-![csm_blocked_settigns.png](.attachments/csm_blocked_settigns.png)
+![blocked_downloads.png](.attachments/blocked_downloads.png)
+![blocked_settigns.png](.attachments/blocked_settigns.png)
 ![blocked_file.png](.attachments/blocked_file.png)
 
 Was allerdings nicht blockiert wird, ist der Download und die Ausführung von sogenannten "ClickOnce" Anwendungen.
@@ -120,8 +120,8 @@ Jetzt können einfach die Anwendung hochladen, und sie auf unserem Zielsystem au
 Bis die Datei tatsächlich ausführt wird, müssen wir uns durch ein paar Dialoge klicken. Für eine Phishingkampagne wäre das also etwas aufwändig (zumindest, solange wir kein Zertifikat haben, mit dem wir unsere Anwendung signieren können. Oder solange wir nicht anderweitig etwas mehr Aufwand betreiben. Mehr dazu im obigen Blogpost von SpecterOps. Ernsthaft, wir empfehlen wirklich ihn durchzulesen). Für unser Szenario ist das allerdings absolut kein Problem. Da wir physisch am System sind (deswegen ja der Kiosk Modus) und uns einfach selbst durch die Dialoge klicken können.
 
 ![ClickOnce2.5.png](.attachments/Click_Once2_5.png)
-![csm_ClickOnce4.png](.attachments/csm_Click_Once4.png)
-![csm_ClickOnce3.png](.attachments/csm_Click_Once3.png)
+![ClickOnce4.png](.attachments/Click_Once4.png)
+![ClickOnce3.png](.attachments/Click_Once3.png)
 
 Uuuuund nachdem wir "Install" klicken, wird unser Code auf dem System ausgeführt und unsere PowerShell gestartet.
 
