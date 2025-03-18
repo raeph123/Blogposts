@@ -181,11 +181,11 @@ Fix-Nummer: 1.0.2-4
 - Für Entwickler und Administratoren: vermeiden Sie sensible Informationen in Prozessaufrufen (Univention hat diesen Punkt bereits in ihre Sicherheitsrichtlininen für Entwickler aufgenommen. Fantastische Arbeit und Reaktion!).
 
 # Zeitleiste der Veröffentlichung
-17.07.2023 - Schwachstelle an Univention gemeldet
-17.07.2023 - [Schwachstelle von Univention bestätigt und im Bugtracker geöffnet](https://forge.univention.org/bugzilla/show_bug.cgi?id=56324)
-17.07.2023 - [GitHub push](https://github.com/univention/univention-corporate-server/commit/1745869fc12d95b4d65ec924285d43bd0a45ae57 ) zur Behebung der Schwachstelle
-19.07.2023 - Fix Veröffentlichung in 1.0.2-4 [Release Note](https://errata.software-univention.de/#/?erratum=5.0x743 )
-19.07.2023 - Fix Veröffentlichung einer ähnlichen Schwachstelle in einem anderen Skript [Release Note](https://errata.software-univention.de/#/?erratum=5.0x741 )
+17.07.2023 - Schwachstelle an Univention gemeldet   
+17.07.2023 - [Schwachstelle von Univention bestätigt und im Bugtracker geöffnet](https://forge.univention.org/bugzilla/show_bug.cgi?id=56324)   
+17.07.2023 - [GitHub push](https://github.com/univention/univention-corporate-server/commit/1745869fc12d95b4d65ec924285d43bd0a45ae57 ) zur Behebung der Schwachstelle   
+19.07.2023 - Fix Veröffentlichung in 1.0.2-4 [Release Note](https://errata.software-univention.de/#/?erratum=5.0x743 )   
+19.07.2023 - Fix Veröffentlichung einer ähnlichen Schwachstelle in einem anderen Skript [Release Note](https://errata.software-univention.de/#/?erratum=5.0x741 )   
 
 # Änderungshistorie
 - 19.10.2023 - Hinweis für Entwickler und Admins im Abschnitt Lektionen hinzugefügt
