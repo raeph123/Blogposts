@@ -34,7 +34,7 @@ Der logische nächste Schritt war also, genau diesen Befehl auf dem Rechner des 
 
 Dies ist jedoch nur möglich, wenn das der Domäne beigetretene System über die mit `DCSync` vergleichbaren Berechtigungen verfügt. In unserer Testumgebung haben wir einen beliebigen Rechner in die Domäne eingebunden und überprüft, welche Informationen wir vom "Domain Controller" zurückbekommen. Im Vergleich zu den obigen Informationen können Sie im folgenden Screenshot sehen, welche Informationen ein unprivilegiertes, der Domäne beigetretenes System erhält.
 
-![noPermissions.png](.attachments/no_Permissions.png)
+![noPermissions.png](.attachments/noPermissions.png)
 
 # Methode 1: LDAP
 
