@@ -63,7 +63,7 @@ ticketer.py -nthash 3B0E04870F352EDC0EF120F16431FA42 -domain-sid S-1-5-21-222879
 ```
 Leider scheiterte die Authentisierung. Der Server antwortete wie folgt:
 
-![ssh_fail.png](.attachments/ssh_fail_e13d78763b.png)
+![ssh_fail.png](.attachments/ssh_fail.png)
 
 Da es sich hier nicht um ein herkömmliches AD handelt, dachten wir, dass ein anderer Ansatz für die Signatur der Univention Kerberos-Tickets verwendet werden könnte. Was uns von Anfang an auffiel, waren die `krb5Key` Felder, die wir im zweiten Screenshot sehen.
 Und wieder kommt uns die hervorragende Univention-Dokumentation zugute. Dadurch lernen wir: ["Das Attribut krb5Key speichert das Kerberos-Passwort."](https://docs.software-univention.de/manual/5.0/en/user-management/password-management.html).
@@ -150,7 +150,7 @@ if __name__ == '__main__':
 And this worked like a charm. It allows us to extract the `NThash` out of the `krb5Key`.
 Now we could take the `krb5Key` of the `krbtgt` account for example to forge a ticket as `Administrator`, which is the default "Domain Admin" in UCS.
 
-![AdminWorks.png](.attachments/Admin_Works.png)
+![AdminWorks.png](.attachments/AdminWorks.png)
 
 Und das war's. Wir können jetzt jeden beliebigen Benutzer impersonieren.
 
