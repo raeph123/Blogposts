@@ -34,7 +34,7 @@ So, the logical next step for us was to recreate this exact command from our att
 
 However, this is only possible if the domain joined system has the permissions that match `DCSync`. In our test environment we joined an arbitrary machine to the domain and checked what information we get back from the "Domain Controller". So, in comparison to the information above, you can see in the screenshot below what information a usual domain joined system gets:
 
-![noPermissions.png](.attachments/no_Permissions.png)
+![noPermissions.png](.attachments/noPermissions.png)
 
 # Exploitation attempt 1: LDAP
 
@@ -65,7 +65,7 @@ ticketer.py -nthash 3B0E04870F352EDC0EF120F16431FA42 -domain-sid S-1-5-21-222879
 
 Sadly, the authentication failed with the following message:
 
-![ssh_fail.png](.attachments/ssh_fail_e13d78763b.png)
+![ssh_fail.png](.attachments/ssh_fail.png)
 
 As this is no traditional AD, we were thinking that they could use another approach to sign their Kerberos tickets. What was bugging us from the start was the `krb5Key` fields we've seen in the second screenshot.
 And again, the Univention documentation comes to our rescue. It states that "[The krb5Key attribute stores the Kerberos password](https://docs.software-univention.de/manual/5.0/en/user-management/password-management.html)".
@@ -152,7 +152,7 @@ if __name__ == '__main__':
 And this worked like a charm. It allows us to extract the `NThash` out of the `krb5Key`.
 Now we could take the `krb5Key` of the `krbtgt` account for example to forge a ticket as `Administrator`, which is the default "Domain Admin" in UCS.
 
-![AdminWorks.png](.attachments/Admin_Works.png)
+![AdminWorks.png](.attachments/AdminWorks.png)
 
 And that's it. We can now be everybody we want to be :-).
 
@@ -184,11 +184,11 @@ Fix number: 1.0.2-4
 
 # Disclosure Timeline
 
-2023/07/17 - Bug Reported
-2023/07/17 - [Bug confirmed by Univention and opened in their Bugtracker](https://forge.univention.org/bugzilla/show_bug.cgi?id=56324)
-2023/07/17 - [GitHub push](https://github.com/univention/univention-corporate-server/commit/1745869fc12d95b4d65ec924285d43bd0a45ae57) to fix the Bug
-2023/07/19 - Fix release in 1.0.2-4 [Release Note](https://errata.software-univention.de/#/?erratum=5.0x743)
-2023/07/19 - Fix release of similar issues in another script [Release Note](https://errata.software-univention.de/#/?erratum=5.0x741)
+2023/07/17 - Bug Reported   
+2023/07/17 - [Bug confirmed by Univention and opened in their Bugtracker](https://forge.univention.org/bugzilla/show_bug.cgi?id=56324)   
+2023/07/17 - [GitHub push](https://github.com/univention/univention-corporate-server/commit/1745869fc12d95b4d65ec924285d43bd0a45ae57) to fix the Bug   
+2023/07/19 - Fix release in 1.0.2-4 [Release Note](https://errata.software-univention.de/#/?erratum=5.0x743)   
+2023/07/19 - Fix release of similar issues in another script [Release Note](https://errata.software-univention.de/#/?erratum=5.0x741)   
 
 # Update History
 
