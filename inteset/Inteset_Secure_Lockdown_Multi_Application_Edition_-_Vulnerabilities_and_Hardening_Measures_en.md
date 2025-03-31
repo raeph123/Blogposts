@@ -1,6 +1,5 @@
 # Inteset Secure Lockdown Multi Application Edition - Vulnerabilities and Hardening Measures
 
-# Table of Contents
 # Introduction
 A while ago, DriveByte stumbled across a kiosk mode application during an assessment. The team was able to find some issues within the kiosk mode, that will be addressed in the following article. While it is our opinion, that these issues should be addressed by the vendor, we still list some mitigating measures that can be taken by users to at least reduce the risk while using the product. Generally speaking,vif you can, you should avoid relying on a kiosk mode for the security of your applications. 
 As always, DriveByte went about addressing the vulnerabilities with the vendor responsibly, within the context of a coordinated vulnerability disclosure. However, after initial contact and sending a description of the vulnerabilities; Radio Silence! 
@@ -211,6 +210,6 @@ Special thanks goes to the CERT/CC team for supporting us along the way and tryi
 2024/01/26 - CERT/CC jumps in  
 2024/02/13 - CERT/CC tells us to prepare for public release on 10th of march  
 2024/03/08 - Final confirmation for release on the 10th of march until further notice  
-2024/03/14 - Final release
+2024/03/14 - Final release  
 2024/04/24 - Updated CVE information
 
